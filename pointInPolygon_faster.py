@@ -7,6 +7,9 @@ def cross(ab, ac):
 def pointOnSegment(A, B, point):
     ab = [B[0]-A[0], B[1]-A[1]]
     ac = [point[0]-A[0], point[1]-A[1]]
+    ab_cross_ac = cross(ab, ac)
+    if ab_cross_ac > eps: return False
+    t = None
     if ab[0] != 0: 
         t = ac[0] / ab[0]
     else:
